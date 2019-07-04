@@ -1,0 +1,464 @@
+:root {
+    --primary-color: #181818;
+    --secondary-color: #054a5c;
+    --box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+}
+
+body {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 14px;
+    margin: 0;
+    padding: 0;
+    background-color: #f7f5f5 !important;
+}
+
+nav .navbar-toggler {
+    border-color: #054a5c;
+}
+
+img, 
+embed,
+object, 
+video {
+    max-width: 100%;
+}
+
+.login {
+    margin-bottom: 5%;
+}
+
+/* GLOBAL*/
+
+
+/* User Page
+==============================*/
+.card-body {
+    background: #f9feff;
+    border-radius: 20px;
+}
+.card input {
+    background: #f9feff;
+}
+
+.card .input-group-text{
+    background: #054a5c;
+    color: #fff;
+}
+
+
+
+
+.post-card {
+    padding: 10px;
+    /* box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2); */
+}
+
+#post-button button{
+    border: none;
+    padding: 5px;
+    width: 30%;
+    border: solid 1px #09738d;
+    backgroun: transparent;
+    color: #000;
+    cursor: pointer;
+    transition: 0.4s ease;
+    border-radius: 10%;
+    margin-bottom: 1rem;
+    outline: none;
+}
+#post-button button:hover{
+    background: #ebf1f3;
+}
+#post-button {
+    display: block;
+    position: fixed;
+    top: 10rem;
+    left: 3rem;
+}
+.post-card textarea {
+    width: 100%;
+    height: 100%;
+    resize: none;
+    outline: none;
+    border: none;
+    font-size: 1.5rem;
+}
+
+.shadow {
+    box-shadow: 0 1px 5px rgba(104, 104, 104, 0.8);
+}
+
+.header-title {
+    background: #ccc;
+    padding: 5px;
+    margin: 4px 0;
+    border-left: #c74f0a solid 3px;
+    text-transform: uppercase;
+}
+.header-title h2 {
+    font-size: 1.2rem;
+    font-family: cursive;
+}
+.news-card {
+    margin-top: 1rem;
+}
+/* .news-card img {
+    max-width: 100%;
+    height: 70px;
+} */
+
+.news-card a {
+    color: #181818;
+}
+.news-card a:hover {
+    color: #c74f0a;
+    text-decoration: none;
+}
+
+.main-body {
+    padding: 20px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+.post-meta a{
+    display: inline-block;
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #181818; 
+}
+.post-meta a:last-child {
+    margin-left: 10px; 
+}
+
+
+.trending-card .title h5{
+    font-size: 1.2rem;
+    font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.trending-card .title a{
+    text-decoration: none;
+    color: #181818;
+}
+
+.trending-card #user {
+    border-radius: 50%;
+}
+.trending-card a {
+    text-decoration: none;
+    color: #000;
+}
+
+
+.container {
+    width: 80%;
+    margin: auto;
+    overflow: hidden;
+} 
+
+.btn-btn {
+    background: none;
+    border: solid 1px var(--secondary-color);
+    border-radius: 5px;
+    padding: 10px;
+    transition: 0.5s ease-in-out;
+    min-width: 48px;
+    min-height: 48px;
+}
+
+.btn-btn:hover {
+    background-color: var(--secondary-color);
+    color: #fff;
+}
+
+/* Categories
+==================================*/
+
+.social-followers-info {
+    position: relative;
+    z-index: 1; 
+}
+.social-followers-info a {
+    display: block;
+    width: 100%;
+    height: 50px;
+    font-size: 18px;
+    color: #ffffff;
+    background-color: #ed3974;
+    margin-bottom: 10px;
+    padding: 0 30px;
+    font-weight: 600;
+    line-height: 50px; 
+    text-decoration: none;
+}
+.social-followers-info a:last-child {
+    margin-bottom: 0; 
+}
+@media only screen and (max-width: 767px) {
+        .social-followers-info a {
+          font-size: 16px;
+          padding: 0 20px; } }
+      .social-followers-info a i {
+        margin-right: 10px; }
+      .social-followers-info a span {
+        font-size: 14px; }
+      .social-followers-info a.facebook-fans {
+        background-color: #4b6cd0; }
+.social-followers-info a.facebook-fans:hover {
+    background-color: #4b6cd0cc; 
+    text-decoration: none;
+    color: #fff;
+}
+.social-followers-info a.twitter-followers {
+    background-color: #49a7f3; 
+}
+.social-followers-info a.twitter-followers:hover {
+    background-color: #49a7f3cc;
+    text-decoration: none;
+    color: #fff; 
+}
+.social-followers-info a.youtube-subscribers {
+    background-color: #db5c3a; 
+}
+.social-followers-info a.youtube-subscribers:hover {
+    background-color: #db5c3acc;
+    text-decoration: none;
+    color: #fff; 
+}
+.social-followers-info a.google-followers {
+    background-color: #de3939; 
+}
+.social-followers-info a.google-followers:hover {
+    background-color: #de3939cc; 
+    text-decoration: none;
+    color: #fff;
+}
+
+.catagory-widgets {
+    position: relative;
+    z-index: 1;
+    list-style: none;
+    margin-right: 2rem;
+}
+
+.catagory-widgets li a {
+    display: flex;
+    justify-content: space-between;
+    color: #181818;
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+    text-decoration: none;
+    transition: 0.5s ease-in-out;
+}
+
+.catagory-widgets li a:hover, .catagory-widgets li a:focus {
+    color: #ed3974; 
+}
+.catagory-widgets li:last-child a {
+    margin-bottom: 0; 
+}
+
+.news-card h6 {
+    font-weight: bold;
+    font-size: 0.9rem;
+}
+.news-card .news-title {
+    font-size: 0.8rem;
+    line-height: 0.6rem;
+}
+
+
+/* HEADER */
+
+nav {
+    background: #f7f5f5;
+}
+
+main {
+    margin-top: 1rem;
+}
+
+header .navbar-brand{
+    float:  left;
+    font-size: 2rem;
+    font-weight: bolder;
+    margin: 0;
+    font-family: cursive;
+    color: #c74f0a;
+}
+
+header .navbar-brand:hover{
+    text-decoration: underline;
+    color: #c74f0a;
+}
+header span {
+    color: #054a5c;
+}
+
+header nav {
+    display: flex;
+    justify-content:  space-between;
+}
+
+header nav ul li{
+    display: inline;
+    padding: 1rem;
+    list-style: none;
+}
+
+header a{
+    text-decoration: none;
+    font-size: 1rem;
+    color: var(--primary-color);
+    text-transform: capitalize;
+}
+
+nav ul li a:hover {
+    color: var(--secondary-color);
+}
+header .fa-user {
+    font-size: 1.6rem;
+    color: #054a5c;
+} 
+
+nav .btn-style {
+    border-radius: 30px;
+    padding: 6px 10px;
+}
+
+
+
+/* .dropdown-nav li {
+    display: block;
+}
+
+.dropdown-nav{
+    display: none;
+    position: absolute;
+    min-width: 100px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.5);
+    padding: 12px 16px;
+    background: #fff;
+} */
+
+/* .dropdown-nav::after {
+    content: "";
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    margin-left: -10px;
+    border-width: 20px;
+    border-style: solid;
+    border-color: transparent transparent #ffffff;
+} */
+
+
+
+/*Sign Up Form*/
+/* #form-group {
+    display: flex;
+    justify-items: center;
+    position: relative;
+    margin: 0 auto;
+    margin-top: 5%;
+    width: 100%;
+    background-color: #f9feff;
+    padding: 10px 20px;
+    border-radius: 20px;
+    font-size: 1.2rem;
+} */
+
+#form-group h3 {
+    text-align: center;
+    font-size: 1.2rem;
+    margin: 0;
+    padding: 15px;
+    color: #054a5c;
+    font-family: cursive;
+}
+#form-group p {
+    font-size: 0.9rem;
+    margin: 0;
+    padding: 10px;
+}
+#form-group a {
+    color: #c74f0a;
+    font-family: cursive;
+}
+
+/* input[type="text"], input[type="password"],
+input[type="email"]{
+    margin-bottom: 8px;
+    display: block;
+    box-sizing: border-box;
+    padding: 13px;
+    border-radius: 30px;
+    border-style: none;
+    border: solid 1px var(--secondary-color);
+    background-color: #f9feff;
+    outline: none;
+    color: #054a5c;
+    font-size: 1rem;
+    transition: 0.2s ease;
+} */
+
+
+.author img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+.author .btn-style {
+    border-radius: 50px;
+    padding: 2px 10px;
+}
+.story-content p {
+    font-size: 1.2rem;
+}
+
+
+footer {
+    text-align: center;
+    background: #f9feff;
+    padding: 10px;
+    font-family: cursive;
+    font-size: 1rem;
+    box-shadow: 0 4px 10px 0 rgba(0,0,0,0.4);
+}
+
+.tooltip-text {
+    visibility: hidden;
+    width: 120px;
+    background: #054a5c;
+    color: #fff;
+    position: absolute;
+    z-index: 1;
+    left: 50%;
+    margin-left: -60px;
+    bottom: 60%;
+    text-align: center;
+    padding: 5px 0;
+    border-radius: 5px;
+
+}
+
+.tooltip .tooltip-text::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -10px;
+    border-width: 10px;
+    border-style: solid;
+    border-color: #054a5c  transparent transparent;
+}
+
+.tooltip:hover .tooltip-text {
+    visibility: visible;
+}
+
+
+
+
