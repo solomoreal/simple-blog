@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Post;
+use App\Category;
 use Illuminate\Http\Request;
 
 class PostController extends Controller
@@ -24,7 +25,8 @@ class PostController extends Controller
      */
     public function create()
     {
-        return view('post.create');
+        $categories = Category::all();
+        return view('posts.create',compact('categories'));
     }
 
     /**
@@ -38,18 +40,34 @@ class PostController extends Controller
         $this->validate($request,[
             'title' => 'required',
             'body' => 'required',
-            'cover_image' => 'reqiured|image',
+            'cover_image' => 'required|image',
+            ]);
 
-        ]);
+        if($request->hasFile('cover_image')){
+            //get file name with extension
+            $fileNameWithExt = $request->file('cover_image')->getClientOriginalName();
+            //get just file name
+            $filename = pathinfo($fileNameWithExt,PATHINFO_FILENAME);
+            //get just extension
+            $extension = $request->file('cover_image')->getClientOriginalExtension();
+            $title = $request->title;
+            //file name to store
+            $fileNameToStore = $title.'_'.time().'.'.$extension;
+            //upload image
+            $path = $request->file('cover_image')->storeAs('public/cover_image', $fileNameToStore);
+        }else{
+            $fileNameToStore = 'noimage.jpg';
+        }
         
         $post = new Post;
         $post->title = $request->input('title');
         $post->body = $request->input('body');
-        $post->user_id = auth()->user()->id;
-        $post->cate
+        $post->user_id = auth()->user() ? auth()->user()->id : null;
+        $post->category_id = $request->category_id;
+        $post->cover_image = $fileNameToStore;
         $post->save();
 
-        return redirect(url('/dashboard'))->with('success', 'Post Created');
+        return back()->with('success', 'Post Created');
     }
 
     /**
@@ -83,7 +101,41 @@ class PostController extends Controller
      */
     public function update(Request $request, Post $post)
     {
-        //
+        $this->validate($request,[
+            'title' => 'required',
+            'body' => 'required',
+            'cover_image' => 'reqiured|image',
+            ]);
+
+
+        if($request->hasFile('cover_image')){
+            //get file name with extension
+            $fileNameWithExt = $request->file('cover_image')->getClientOriginalName();
+            //get just file name
+            $filename = pathinfo($fileNameWithExt,PATHINFO_FILENAME);
+            //get just extension
+            $extension = $request->file('cover_image')->getClientOriginalExtension();
+            $title = $request->title;
+            //file name to store
+            $fileNameToStore = $title.'_'.time().'.'.$extension;
+            //upload image
+            $path = $request->file('cover_image')->storeAs('public/cover_image', $fileNameToStore);
+        }
+
+        $post->title = $request->input('title');
+        $post->body = $request->input('body');
+        $post->user_id = auth()->user()->id;
+        $post->category_id = $request->category_id;
+
+        if($request->hasFile('cover_image')){
+            if($post->cover_image != 'noimage.jpg'){
+                Storage::delete('public/cover_image/'.$post->cover_image);
+                $post->cover_image = $fileNameToStore;
+            }
+            
+        }
+        $post->update();
+        return back();
     }
 
     /**
@@ -94,6 +146,10 @@ class PostController extends Controller
      */
     public function destroy(Post $post)
     {
-        //
+        if($post->cover_image != 'noimage.jpg'){
+            Storage::delete('public/cover_image/'.$post->cover_image);
+        }
+        $post->delete();
+        return back();
     }
 }

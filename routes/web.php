@@ -16,6 +16,9 @@ Route::group(['prefix' => '/'], function () {
     Route::get('read','PagesController@read')->name('read');
 });
 
+Route::resource('posts', 'PostController');
+Route::resource('categories', 'CategoryController');
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
